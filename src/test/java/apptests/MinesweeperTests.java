@@ -18,7 +18,8 @@ public class MinesweeperTests extends RomanBase {
     @Test
     public void demo(){
         MinesweeperApplication app = new MinesweeperApplication(roman());
-        app.homePage.difficultyBeginner();
+        app.homePage.setCustomGrid();
+        app.beginner.randomSelect();
         app.beginner.randomSelect();
     }
 }

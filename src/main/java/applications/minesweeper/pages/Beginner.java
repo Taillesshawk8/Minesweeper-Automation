@@ -27,12 +27,11 @@ public class Beginner extends Selenium {
         return false;
     }
 
-    private By cell = null;
-
     public void randomSelect(){
         Random random = new Random();
         int x = random.nextInt(4);
         int y = random.nextInt(4);
+
         WebElement cellSpace = _driver.findElement(By.xpath("//div[@id='cell_"+x+"_"+y+"'][@class='cell size24 hd_closed']"));
         Actions cell = new Actions(_driver);
         cell.click(cellSpace).perform();

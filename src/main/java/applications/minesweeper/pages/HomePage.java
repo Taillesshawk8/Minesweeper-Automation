@@ -23,9 +23,9 @@ public class HomePage extends Selenium {
 
     private final By standardMode = By.xpath("//span[text()='Standard mode']");
     private final By customBtn = By.xpath("//div[@id='levels_full']//span[text()='Custom']");
-    private final WebElement width = _driver.findElement(By.xpath("//input[@id='custom_width']"));
-    private final WebElement Height = _driver.findElement(By.xpath("//input[@id='custom_height']"));
-    private final WebElement Mines = _driver.findElement(By.xpath("//input[@id='custom_mines']"));
+    private final By width = By.xpath("//input[@id='custom_width']");
+    private final By Height = By.xpath("//input[@id='custom_height']");
+    private final By Mines = By.xpath("//input[@id='custom_mines']");
     private final By updateBtn = By.xpath("//button[@id='level_update_btn']");
 
     public void difficultyBeginner(){
@@ -36,12 +36,12 @@ public class HomePage extends Selenium {
         navigateTo();
         click(standardMode);
         click(customBtn);
-        width.clear();
-        width.sendKeys("3");
-        Height.clear();
-        Height.sendKeys("3");
-        Mines.clear();
-        Mines.sendKeys("1");
+        clear(width);
+        sendKeys(width,"3");
+        clear(Height);
+        sendKeys(Height,"3");
+        clear(Mines);
+        sendKeys(Mines,"1");
         click(updateBtn);
      }
 }
